@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @portrait.level %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @portrait.image %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @portrait.person_id %>
+</p>
+
+<%= link_to 'Edit', edit_portrait_path(@portrait) %> |
+<%= link_to 'Back', portraits_path %>

@@ -10,11 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_08_231342) do
+ActiveRecord::Schema.define(version: 2018_11_27_121257) do
+
+  create_table "groups", force: :cascade do |t|
+    t.integer "year_start"
+    t.integer "year_end"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "level_quantity"
+    t.string "kind"
+    t.string "cover"
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.integer "group_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "portraits", force: :cascade do |t|
+    t.integer "level"
+    t.string "image"
+    t.integer "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.integer "level"
+    t.integer "group_id"
+    t.string "name"
+    t.string "description"
+    t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
