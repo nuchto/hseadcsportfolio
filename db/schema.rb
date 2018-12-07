@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_121257) do
+ActiveRecord::Schema.define(version: 2018_12_07_142434) do
 
   create_table "groups", force: :cascade do |t|
     t.integer "year_start"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_121257) do
     t.integer "level_quantity"
     t.string "kind"
     t.string "cover"
+    t.string "groupcover"
   end
 
   create_table "members", force: :cascade do |t|
