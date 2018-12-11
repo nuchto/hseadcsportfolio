@@ -31,10 +31,15 @@
     <%= form.text_field :description %>
   </div>
 
-  <div class="field">
-    <%= form.label :cover %>
-    <%= form.text_field :cover %>
+  <div class=”field”>
+	  <%= form.label :work %>
+	  <%= form.file_field :work, :multiple => true  %>
   </div>
+
+  <div class=”field”>
+ 	  <%= form.label :workcover %>
+ 	  <%= form.file_field :workcover %>
+   </div>
 
   <div class="actions">
     <%= form.submit %>
