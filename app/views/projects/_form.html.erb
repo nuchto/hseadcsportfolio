@@ -36,6 +36,11 @@
 	  <%= form.file_field :work %>
   </div>
 
+  <div class=”field”>
+  <%= form.label :projectcover %>
+  <%= form.file_field :projectcover, :multiple => true %>
+</div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
