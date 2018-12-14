@@ -1,4 +1,4 @@
-class WorkUploader < CarrierWave::Uploader::Base
+class ProjectcoverUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
