@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2018_12_11_120347) do
     t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "portrait"
     t.string "photo"
   end
 
@@ -61,11 +60,11 @@ ActiveRecord::Schema.define(version: 2018_12_11_120347) do
     t.integer "group_id"
     t.string "name"
     t.string "description"
-    t.string "work"
-    t.string "workcover"
+    t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
+    t.string "work"
+    t.string "workcover"
   end
 
 end
