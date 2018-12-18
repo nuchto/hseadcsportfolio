@@ -18,22 +18,26 @@ Group.create([
     name: 'Поток 2020',
     year_start: '2016',
     year_end: '2020',
-    level_quantity: '4'
+    level_quantity: '4',
+    group_id: '1'
   },{
     name: 'Ночь нежна',
     year_start: '2017',
     year_end: '2021',
-    level_quantity: '3'
+    level_quantity: '3',
+    group_id: '2'
   },{
     name: 'Третий отряд',
     year_start: '2018',
     year_end: '2022',
-    level_quantity: '2'
+    level_quantity: '2',
+    group_id: '3'
   },{
     name: 'Новая кровь',
     year_start: '2019',
     year_end: '2023',
-    level_quantity: '1'
+    level_quantity: '1',
+    group_id: '4'
   }
   ])
 
@@ -41,6 +45,7 @@ Group.create([
 
 Person.create([
   {
+    # group_id:
     first_name: 'Анна',
     last_name: 'Ковыляева'
   },{

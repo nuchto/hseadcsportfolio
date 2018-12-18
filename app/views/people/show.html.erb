@@ -2,7 +2,7 @@
 
 <p>
   <strong>Group:</strong>
-  <%= @person.group_id %>
+  <%= Group.find(@person.group_id).name %>
 </p>
 
 <p>

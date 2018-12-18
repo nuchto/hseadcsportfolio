@@ -7,7 +7,7 @@
 
 <p>
   <strong>Group:</strong>
-  <%= @project.group_id %>
+  <%= Group.find(@project.group_id).name %>
 </p>
 
 <p>
