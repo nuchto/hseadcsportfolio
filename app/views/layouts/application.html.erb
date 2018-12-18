@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hseadcsportfolio</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body>
+
+    <body>
+    <nav>
+      <%= link_to 'Groups',  groups_url %>
+      <%= link_to 'People', people_url %>
+      <%= link_to 'Projects', projects_url %>
+      <%= link_to 'Portraits',  portraits_url %>
+
+    </nav>
+
+    <%= yield %>
+</body>
+
+</html>
