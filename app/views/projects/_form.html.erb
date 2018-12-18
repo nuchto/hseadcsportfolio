@@ -13,12 +13,20 @@
 
   <div class="field">
     <%= form.label :level %>
-    <%= form.number_field :level %>
+    <%= form.select(:level) do %>
+      <% [['1', 1], ['2', 2], ['3', 3], ['4', 4] ].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="field">
     <%= form.label :group_id %>
-    <%= form.number_field :group_id %>
+    <%= form.select(:group_id) do %>
+      <% [['Новая кровь', 1], ['Третий отряд', 2], ['Ночь нежна', 3], ['Поток 2020', 4] ].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="field">

@@ -13,12 +13,20 @@
 
   <div class="field">
     <%= form.label :year_start %>
-    <%= form.number_field :year_start %>
+    <%= form.select(:year_start) do %>
+      <% [['2016', 2016], ['2017', 2017], ['2018', 2018], ['2019', 2019] ].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="field">
     <%= form.label :year_end %>
-    <%= form.number_field :year_end %>
+    <%= form.select(:year_end) do %>
+      <% [['2020', 2020], ['2021', 2021], ['2022', 2022], ['2023', 2023] ].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="field">
@@ -28,7 +36,11 @@
 
   <div class="field">
     <%= form.label :level_quantity %>
-    <%= form.number_field :level_quantity %>
+    <%= form.select(:level_quantity) do %>
+      <% [['1', 1], ['2', 2], ['3', 3], ['4', 4] ].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="field">
