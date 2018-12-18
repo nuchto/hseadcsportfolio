@@ -22,21 +22,19 @@
 
 <div>
   <p>
-    <strong>Project:</strong>
-    <%= @project.work %>
+    <strong>Cover:</strong>
+    <%= @project.cover %>
   </p>
-  <%= image_tag(@project.work_url.to_s) %>
+  <%= image_tag(@project.workcover_url(:thumb).to_s) %>
 </div>
 
 <div>
   <p>
-    <strong>Cover:</strong>
-    <%= @project.cover %>
+    <strong>Project:</strong>
+    <%= @project.work %>
   </p>
-  <%= image_tag(@project.workcover_url.to_s) %>
+  <%= image_tag(@project.work_url(:thumb).to_s) %>
 </div>
-
-
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
