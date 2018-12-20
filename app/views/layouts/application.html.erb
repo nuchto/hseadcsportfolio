@@ -7,18 +7,47 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_pack_tag 'application' %>
   </head>
 
-  <body>
-
     <body>
-    <nav>
-      <%= link_to 'Groups',  groups_url %>
-      <%= link_to 'People', people_url %>
-      <%= link_to 'Projects', projects_url %>
-      <%= link_to 'Portraits',  portraits_url %>
+      <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <aside class="collapse navbar-collapse d-flex">
+        <% if user_signed_in? %>
+          <div class="navbar-nav">
+            <% if current_page?(groups_path) %>
+              <%= link_to 'Группы', groups_path, :class => "nav-item nav-link active" %>
+            <% else %>
+              <%= link_to 'Группы', groups_path, :class => "nav-item nav-link" %>
+            <% end %>
 
+            <% if current_page?(people_path) %>
+              <%= link_to 'Студенты', people_path, :class => "nav-item nav-link active" %>
+            <% else %>
+              <%= link_to 'Студенты', people_path, :class => "nav-item nav-link" %>
+            <% end %>
+
+            <% if current_page?(projects_path) %>
+              <%= link_to 'Проекты', projects_path, :class => "nav-item nav-link active" %>
+            <% else %>
+              <%= link_to 'Проекты', projects_path, :class => "nav-item nav-link" %>
+            <% end %>
+
+            <% if current_page?(portraits_path) %>
+              <%= link_to 'Портреты', portraits_path, :class => "nav-item nav-link active" %>
+            <% else %>
+              <%= link_to 'Портреты', portraits_path, :class => "nav-item nav-link" %>
+            <% end %>
+
+            <% current_user.email %>
+          </div>
+          <form class="form-inline ml-auto">
+            <%= link_to 'Выйти', destroy_user_session_path, method: :delete, :class => "btn btn-sm btn-outline-secondary" %>
+          </form>
+        <% else %>
+          <%= link_to 'Register', new_user_registration_path, :class => "nav-item nav-link" %>
+          <%= link_to 'Login', new_user_session_path, :class => "nav-item nav-link" %>
+        <% end %>
+      </aside>
     </nav>
 
     <%= yield %>

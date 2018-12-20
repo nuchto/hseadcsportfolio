@@ -1,38 +1,44 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Year start:</strong>
-  <%= @group.year_start %>
-</p>
+<div class="card col-6 mr-auto ml-auto mt-5 mb-5">
+  <div class="card-body">
+    <% if notice != nil %>
+      <p class="alert alert-primary" id="notice"><%= notice %></p>
+    <% end %>
 
-<p>
-  <strong>Year end:</strong>
-  <%= @group.year_end %>
-</p>
+    <h5 class="card-title">О группе</h5>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
+    <p>
+      Начало обучения:
+      <%= @group.year_start %>
+    </p>
 
-<p>
-  <strong>Level quantity:</strong>
-  <%= @group.level_quantity %>
-</p>
+    <p>
+      Конец обучения:
+      <%= @group.year_end %>
+    </p>
 
-<p>
-  <strong>Kind:</strong>
-  <%= @group.kind %>
-</p>
+    <p>
+      Название группы:
+      <%= @group.name %>
+    </p>
 
-<div>
-  <p>
-    <strong>Cover:</strong>
-  </p>
-  <%= image_tag(@group.groupcover_url(:thumb).to_s) %>
+    <p>
+      Описание:
+      <%= @group.kind %>
+    </p>
+
+
+
+    <p>
+      Обложка группы:
+      <%= @group.groupcover %>
+    </p>
+
+    <div class="d-flex justify-content-between mt-4 mb-3">
+      <%= link_to 'Назад', groups_path, :class => 'btn btn-outline-primary' %>
+      <div class="actions">
+        <%= link_to 'Редактировать', edit_group_path(@group), :class => 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
