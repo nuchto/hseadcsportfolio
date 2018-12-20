@@ -43,17 +43,10 @@ gem 'carrierwave', '~> 1.0'
 gem 'bootstrap-sass', '~> 3.4.0'
 gem 'sassc-rails', '>= 2.0.0'
 
-gem 'popper_js', '~> 1.14.5'
-
-gem 'bootstrap'
-
 gem 'jquery-rails'
 
 gem 'momentjs-rails'
 gem 'bootstrap-daterangepicker-rails'
-
-gem 'devise'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
