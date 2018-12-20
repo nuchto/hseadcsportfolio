@@ -8,10 +8,10 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="card-deck">
+<div class="d-flex flex-wrap col-9 m-auto justify-content-between">
   <% @groups.each do |group| %>
-    <div class="card" style="width: 200rem;">
-      <img class="card-img-top" src="../../" alt="Обложка группы" <%= group.groupcover %>>
+    <div class="card mb-5" style="width: 18rem;">
+      <img class="card-img-top" src="..//" alt="Обложка группы" <%= group.groupcover %>>
       <div class="card-body">
         <h5 class="card-title"> Название группы: <%= group.name %></h5>
         <p class="card-text">Начало обучения: <%= group.year_start %></p>
@@ -20,11 +20,16 @@
         <p class="card-text">Курс: <%= group.level_quantity %></p>
         <p class="card-text">Описание: <%= group.kind %></p>
         <p class="card-text">Обложка группы: <%= group.groupcover %></p>
-
-        <div class="actions">
-         <%= link_to 'Подробнее', group, :class => 'btn btn-outline-primary' %>
        </div>
+      <div class="btn-group btn-group-toggle">
+        <label class="btn btn-secondary active">
+        <%= link_to 'Подробнее', group, :class => 'btn btn-primary btn-sm' %>
+        <%= link_to 'Редактировать', group, :class => 'btn btn-secondary btn-sm' %>
+        <%= link_to 'Удалить', group, :class => 'btn btn-primary btn-sm' %>
       </div>
+      </div>
+      </div>
+
     </div>
   <% end %>
 </div>
