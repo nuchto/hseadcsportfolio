@@ -5,15 +5,21 @@
   <%= @portrait.level %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @portrait.image %>
-</p>
 
 <p>
   <strong>Person:</strong>
   <%= @portrait.person_id %>
 </p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @portrait.image %>
+</p>
+
+<div>
+  <%= image_tag(@portrait.photo_url(:thumb).to_s) %>
+</div>
+
 
 <%= link_to 'Edit', edit_portrait_path(@portrait) %> |
 <%= link_to 'Back', portraits_path %>

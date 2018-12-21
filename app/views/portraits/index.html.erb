@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>Level</th>
-      <th>Image</th>
       <th>Person</th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +16,8 @@
     <% @portraits.each do |portrait| %>
       <tr>
         <td><%= portrait.level %></td>
-        <td><%= portrait.image %></td>
         <td><%= portrait.person_id %></td>
+        <td><%= portrait.photo %></td>
         <td><%= link_to 'Show', portrait %></td>
         <td><%= link_to 'Edit', edit_portrait_path(portrait) %></td>
         <td><%= link_to 'Destroy', portrait, method: :delete, data: { confirm: 'Are you sure?' } %></td>
