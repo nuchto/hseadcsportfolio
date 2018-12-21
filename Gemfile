@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-gem 'mini_magick', '~> 4.8'
+# gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -42,18 +42,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'webpacker', '~> 3.5'
 
 gem 'carrierwave', '~> 1.0'
-
-gem 'bootstrap-sass', '~> 3.4.0'
-gem 'sassc-rails', '>= 2.0.0'
-
-gem 'popper_js', '~> 1.14.5'
-
-gem 'bootstrap'
-
-gem 'jquery-rails'
-
-gem 'momentjs-rails'
-gem 'bootstrap-daterangepicker-rails'
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

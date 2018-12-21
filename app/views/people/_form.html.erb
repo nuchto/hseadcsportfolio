@@ -11,20 +11,10 @@
     </div>
   <% end %>
 
-
-    <div class=“field”>
-      <%= form.label :group_id %>
-      <%= select("person", "group_id", Group.all.collect { |p| [ p.name, p.id] }, { include_blank: true }) %>
-    </div>
-
-  <!-- <div class="field">
+  <div class="field">
     <%= form.label :group_id %>
-    <%= form.select(:group_id) do %>
-      <% [['Новая кровь', 1], ['Третий отряд', 2], ['Ночь нежна', 3], ['Поток 2020', 4] ].each do |c| -%>
-        <%= content_tag(:option, c.first, value: c.last) %>
-      <% end %>
-    <% end %>
-  </div> -->
+    <%= form.number_field :group_id %>
+  </div>
 
   <div class="field">
     <%= form.label :first_name %>

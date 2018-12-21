@@ -69,6 +69,6 @@ class PortraitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def portrait_params
-      params.require(:portrait).permit(:level, :person_id, :photo)
+      params.require(:portrait).permit(:level, :image, :person_id)
     end
 end
