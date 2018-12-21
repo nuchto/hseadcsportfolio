@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year start:</strong>
+  <%= @group.year_start %>
+</p>
+
+<p>
+  <strong>Year end:</strong>
+  <%= @group.year_end %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>Level quantity:</strong>
+  <%= @group.level_quantity %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @group.kind %>
+</p>
+
+<div>
+  <p>
+    <strong>Cover:</strong>
+  </p>
+  <%= image_tag(@group.groupcover_url.to_s) %>
+</div>
+
+
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>

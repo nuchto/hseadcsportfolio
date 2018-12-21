@@ -1,0 +1,32 @@
+<%= form_with(model: portrait, local: true) do |form| %>
+  <% if portrait.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(portrait.errors.count, "error") %> prohibited this portrait from being saved:</h2>
+
+      <ul>
+      <% portrait.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.number_field :level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :person_id %>
+    <%= form.number_field :person_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
