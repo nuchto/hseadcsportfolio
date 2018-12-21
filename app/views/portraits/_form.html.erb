@@ -13,17 +13,28 @@
 
   <div class="field">
     <%= form.label :level %>
-    <%= form.number_field :level %>
+
+    <%= form.select(:level) do %>
+      <% [['1', 1], ['2', 2], ['3', 3], ['4', 4] ].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    <!-- <%= form.number_field :level %> -->
   </div>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= form.label :image %>
     <%= form.text_field :image %>
-  </div>
+  </div> -->
 
   <div class="field">
     <%= form.label :person_id %>
-    <%= form.number_field :person_id %>
+    <%= form. text_field :person_id %>
+  </div>
+
+  <div class=”field”>
+    <%= form.label :photo %>
+    <%= form.file_field :photo, :multiple => true %>
   </div>
 
   <div class="actions">
