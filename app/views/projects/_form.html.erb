@@ -13,6 +13,7 @@
 
   <div class="field">
     <%= form.label :level %>
+
     <%= form.select(:level) do %>
       <% [['1', 1], ['2', 2], ['3', 3], ['4', 4] ].each do |c| -%>
         <%= content_tag(:option, c.first, value: c.last) %>
@@ -28,6 +29,7 @@
         <%= content_tag(:option, c.first, value: c.last) %>
       <% end %>
     <% end %> -->
+
   </div>
 
   <div class="field">
