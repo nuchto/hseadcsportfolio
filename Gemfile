@@ -41,6 +41,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'webpacker', '~> 3.5'
 
+gem 'devise'
+
 gem 'carrierwave', '~> 1.0'
 
 gem 'bootstrap-sass', '~> 3.4.0'

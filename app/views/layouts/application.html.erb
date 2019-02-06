@@ -19,6 +19,14 @@
       <%= link_to 'Проекты', projects_url %>
       <%= link_to 'Портреты',  portraits_url %>
 
+     <% if user_signed_in? %>
+         <%= current_user.email %>
+         <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+       <% else %>
+         <%= link_to 'Регистрация', new_user_registration_path %>
+         <%= link_to 'Войти', new_user_session_path %>
+      <% end %>
+
     </nav>
 <!--
     <nav class="navbar navbar-dark bg-dark">
