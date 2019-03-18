@@ -12,34 +12,20 @@
 
   <body>
 
-    <body>
+
     <nav>
       <%= link_to 'Группы',  groups_url %>
       <%= link_to 'Студенты', people_url %>
       <%= link_to 'Проекты', projects_url %>
       <%= link_to 'Портреты',  portraits_url %>
 
-     <% if user_signed_in? %>
-         <%= current_user.email %>
-         <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
-       <% else %>
-         <%= link_to 'Регистрация', new_user_registration_path %>
-         <%= link_to 'Войти', new_user_session_path %>
-      <% end %>
 
+
+     <%= render 'menubar'  %>
+
+     <%= yield %>
     </nav>
-<!--
-    <nav class="navbar navbar-dark bg-dark">
-     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="groups">Группы <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="projects">Проекты</a>
-          <a class="nav-item nav-link  people_url" href="people">Студенты</a>
-          <a class="nav-item nav-link portraits_url" href="portraits">Портреты</a>
-        </div>
-      </div>
-    </nav> -->
-    <%= yield %>
+
  </body>
 
 </html>
