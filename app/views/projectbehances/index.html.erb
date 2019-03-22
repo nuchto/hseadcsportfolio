@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Projectbehances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Group</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projectbehances.each do |projectbehance| %>
+      <tr>
+        <td><%= projectbehance.level %></td>
+        <td><%= projectbehance.group_id %></td>
+        <td><%= projectbehance.name %></td>
+        <td><%= link_to 'Show', projectbehance %></td>
+        <td><%= link_to 'Edit', edit_projectbehance_path(projectbehance) %></td>
+        <td><%= link_to 'Destroy', projectbehance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Projectbehance', new_projectbehance_path %>

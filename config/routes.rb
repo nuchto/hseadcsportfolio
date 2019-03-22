@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :projectsites
+  resources :projectbehances
+  resources :projectportfolios
   devise_for :users
   resources :members
   resources :projects

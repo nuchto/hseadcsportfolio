@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_21_225517) do
+ActiveRecord::Schema.define(version: 2019_03_22_024936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,24 @@ ActiveRecord::Schema.define(version: 2019_03_21_225517) do
     t.text "description"
   end
 
+  create_table "projectbehances", force: :cascade do |t|
+    t.integer "level"
+    t.integer "group_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "workbehance"
+  end
+
+  create_table "projectportfolios", force: :cascade do |t|
+    t.integer "level"
+    t.integer "group_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "workportfolio"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.integer "level"
     t.integer "group_id"
@@ -64,6 +82,16 @@ ActiveRecord::Schema.define(version: 2019_03_21_225517) do
     t.datetime "updated_at", null: false
     t.string "work"
     t.string "workcover"
+    t.integer "project_id"
+  end
+
+  create_table "projectsites", force: :cascade do |t|
+    t.integer "level"
+    t.integer "group_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "worksite"
   end
 
   create_table "users", force: :cascade do |t|

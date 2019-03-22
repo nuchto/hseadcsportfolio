@@ -29,7 +29,6 @@
         <%= content_tag(:option, c.first, value: c.last) %>
       <% end %>
     <% end %> -->
-
   </div>
 
   <div class="field">
@@ -37,15 +36,24 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.select(:project_id) do %>
+    
+    <% end %>
+  </div>
+
   <div class=”field”>
 	  <%= form.label :work %>
 	  <%= form.file_field :work, :multipart => true  %>
   </div>
 
-  <div class=”field”>
+  <!-- <div class=”field”>
  	  <%= form.label :workcover %>
  	  <%= form.file_field :workcover %>
-   </div>
+  </div> -->
+
+
 
   <div class="actions">
     <%= form.submit %>
