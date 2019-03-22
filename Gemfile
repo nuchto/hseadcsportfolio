@@ -50,7 +50,7 @@ gem 'sassc-rails', '>= 2.0.0'
 
 gem 'popper_js', '~> 1.14.5'
 
-gem 'bootstrap'
+# gem 'bootstrap'
 
 gem 'jquery-rails'
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_222329) do
+ActiveRecord::Schema.define(version: 2019_03_21_225517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 2019_02_06_222329) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "level_quantity"
-    t.string "kind"
-    t.string "cover"
     t.string "groupcover"
   end
 
@@ -53,17 +51,15 @@ ActiveRecord::Schema.define(version: 2019_02_06_222329) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
   end
 
   create_table "projects", force: :cascade do |t|
     t.integer "level"
     t.integer "group_id"
     t.string "name"
-    t.string "description"
-    t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "work"
