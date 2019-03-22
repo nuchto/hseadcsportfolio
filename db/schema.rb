@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_22_024936) do
+ActiveRecord::Schema.define(version: 2019_03_22_031618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 2019_03_22_024936) do
     t.string "work"
     t.string "workcover"
     t.integer "project_id"
+    t.integer "user_id"
   end
 
   create_table "projectsites", force: :cascade do |t|
