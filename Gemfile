@@ -47,12 +47,18 @@ gem 'cancancan', '~> 2.0'
 
 gem 'carrierwave', '~> 1.0'
 
+gem 'responsive_images'
+
 gem 'bootstrap-sass', '~> 3.4.0'
 gem 'sassc-rails', '>= 2.0.0'
+gem 'bootstrap', '~> 4.3.1'
 
 gem 'popper_js', '~> 1.14.5'
 
+<<<<<<< HEAD
 # gem 'bootstrap'
+=======
+>>>>>>> design
 
 gem 'jquery-rails'
 

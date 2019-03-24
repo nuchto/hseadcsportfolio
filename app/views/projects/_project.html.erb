@@ -1,0 +1,30 @@
+
+
+
+
+<% @projects.each do |project| %>
+<div class="album py-2 bg-light">
+ <div class="container">
+
+   <div class="row">
+     <div class="col-md-3">
+       <div class="card mb-4 box-shadow">
+         <img class="card-img-top"><%=image_tag(project.workcover_url, class: "img-responsive")%></img>
+         <div class="card-body">
+           <div class="card-body mt-2 mb-2" style="min-width: 318px; max-width: 318px; height: 448px;">
+            <div class="text-white text-left d-flex align-items-end h-100 rgba-black-strong py-4 px-4">
+               <div>
+                 <h3 class="card-title pt-2"><strong><%= project.name %></strong></h3>
+                 <p>Имя Фамилия</p>
+               </div>
+               <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+               <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+<% end %>

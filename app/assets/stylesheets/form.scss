@@ -1,0 +1,42 @@
+h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.h1-index {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+textarea.form-control {
+  height: 135px;
+  width: 40px;
+}
+
+.navbar-nav .form-inline {
+  margin-left: 0;
+}
+
+.input-group {
+  padding-left: 0;
+}
+.well {
+  margin-top: 6rem;
+
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+
+// .btn-secondary {
+//   background: black;
+// }
+//
+// .btn-secondary:hover{
+//   background: rgba(0,0,0,0.8);
+
+// }
+// .custom-file-label::after {
+//   content: "Обзор";
+// }
