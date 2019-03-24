@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projectbehances</h1>
+<h1>Проекты Bahance</h1>
 
 <table>
   <thead>
@@ -18,6 +18,7 @@
         <td><%= projectbehance.level %></td>
         <td><%= projectbehance.group_id %></td>
         <td><%= projectbehance.name %></td>
+        <td><%= image_tag(projectbehance.workbehance_url.to_s) %></td>
         <td><%= link_to 'Show', projectbehance %></td>
         <td><%= link_to 'Edit', edit_projectbehance_path(projectbehance) %></td>
         <td><%= link_to 'Destroy', projectbehance, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,28 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<h1>Проекты</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Level</th>
-      <th>Group</th>
-      <th>Name</th>
-      <th colspan="3"></th>
+      <!-- <th>Добавить проект</th>
+      <th colspan="3"></th> -->
     </tr>
   </thead>
 
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.level %></td>
-        <td><%= project.group_id %></td>
         <td><%= project.name %></td>
-        <td><%= project.workcover %></td>
-        <td><%= project.work %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'projects' do %>
+           <%= image_tag(project.workcover_url(:thumb).to_s) %>
+          <% end %>
+        </td>
+        <!-- <td><%= image_tag(project.work_url(:thumb).to_s) %></td> -->
+       <td><%= link_to 'Show', project %></td>
+        <!-- <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
