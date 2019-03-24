@@ -4,27 +4,63 @@
     <title>Hseadcsportfolio</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top navbar-inverse" style="background-color: black;">
+          <div class="container">
+            <nav>
+              <ul class="nav navbar-nav navbar-left">
+                <li class="nav-item <%= 'active' if current_page?(projects_path) || current_page?(projects_path) %>">
+                  <a class="nav-link" href="<%= projects_path %>">Проекты</a>
+                </li>
+                <li class="nav-item <%= 'active' if current_page?(groups_path) || current_page?(groups_path) %>">
+                  <a class="nav-link" href="<%= groups_path %>">Группы</a>
+                </li>
+                <li class="nav-item <%= 'active' if current_page?(posts_path) || current_page?(posts_path) %>">
+                  <a class="nav-link" href="<%= posts_path %>">Статьи</a>
+                </li>
+              </ul>
 
 
-    <nav>
-      <%= link_to 'Группы',  groups_url %>
-      <%= link_to 'Студенты', people_url %>
-      <%= link_to 'Проекты', projects_url %>
-      <%= link_to 'Портреты',  portraits_url %>
+              </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-center"
+            <li class="nav-item">
+              <%= link_to "HSEADCSPORTFOLIO", projects_path, class: "navbar-brand" %>
+            </li>
+        </ul>
+      </nav>
 
+      <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Выход", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Вход", new_user_session_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Регистрация", new_user_registration_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+      </nav>
+          </div>
+        </header>
 
+        <div class="container">
+          <%= render 'menubar'  %>
 
-     <%= render 'menubar'  %>
+          <%= yield %>
+        </div>
 
-     <%= yield %>
-    </nav>
 
  </body>
 
