@@ -1,29 +1,42 @@
 <%= form_with(model: project, local: true) do |form| %>
 
-  <!-- <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="container">
+      <div class="row">
+            <div class="well span4 offset4">
 
-  <div class=”field”>
-	  <%= form.label :work %>
-	  <%= form.file_field :work, :multipart => true  %>
-  </div>
+              <div class="card">
+              <form>
 
- <div class=”field”>
- 	  <%= form.label :workcover %>
- 	  <%= form.file_field :workcover %>
-  </div> -->
+                <div class="">
+                  <h1>Добавить проект</h1>
+                </div>
 
-  <div class="dropdown-menu">
-    <h1 class="dropdown-header">Добавить проект</h1>
+              <div class="field form-group">
+                <%= form.label "Студенческий проект" %>
+                <%= link_to "+", new_projectportfolio_path, class: "nav-link" %>
+              </div>
 
-    <a class="dropdown-item" href="/projectportfolios/new"(.:format)>Студенческий проект</a>
-    <a class="dropdown-item" href="/projectbehances/new"(.:format)>Behance</a>
-    <a class="dropdown-item" href="/projectsites/new"(.:format)>Персональный сайт</a>
-  </div>
+              <div class="field form-group">
+                <%= form.label "Behance" %>
+                <%= link_to "+", new_projectbehance_path, class: "nav-link" %>
+              </div>
 
-  <!-- <div class="actions">
-    <%= form.submit %>
-  </div> -->
+              <div class="field form-group">
+                <%= form.label "Персональный сайт" %>
+                <%= link_to "+", new_projectsite_path, class: "nav-link" %>
+              </div>
+
+                <div class="d-flex justify-content-between mt-4 mb-5">
+
+                    <div class="actions">
+                      <%= link_to 'Все проекты', projects_path, :class => 'btn btn-light btn-lg' %>
+                    </div>
+
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
 <% end %>

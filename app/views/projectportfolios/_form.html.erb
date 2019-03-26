@@ -11,42 +11,57 @@
     </div>
   <% end %>
 
-    <div class="field">
-      <%= form.label :level %>
 
-      <%= form.select(:level) do %>
-        <% [['1', 1], ['2', 2], ['3', 3], ['4', 4] ].each do |c| -%>
-          <%= content_tag(:option, c.first, value: c.last) %>
-        <% end %>
-      <% end %>
-    </div>
+      <div class="container">
+        <div class="row">
+              <div class="well span4 offset4">
+                <div class="">
+                  <h1>Добавить проект из студенческого портфолио</h1>
+                </div>
+                <div class="card">
+                <form>
+                <div class="field form-group">
+                  <%= form.label "Название проекта" %>
+                  <%= form.text_field :name, :class => 'form-control' %>
+                </div>
 
-    <div class="field">
-      <%= form.label :group_id %>
-      <%= select("project", "group_id", Group.all.collect { |p| [ p.name, p.id] }, { include_blank: true }) %>
-      <!-- <%= form.select(:group_id) do %>
-        <% [['Новая кровь', 1], ['Третий отряд', 2], ['Ночь нежна', 3], ['Поток 2020', 4] ].each do |c| -%>
-          <%= content_tag(:option, c.first, value: c.last) %>
-        <% end %>
-      <% end %> -->
-    </div>
+                <div class="form-group">
+                  <%= form.label "Курс" %>
+                  <%= form.select :level_quantity, options_for_select([["1"], ["2"], ["3"], ["4"]]), {}, {:class => 'form-control custom-select'} %>
+                  </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+                  <div class="form-group">
+                    <%= form.label "Группа" %>
+                    <%= select("project", "group_id", Group.all.collect { |p| [ p.name, p.id] }, { include_blank: true }) %>
+                  </div>
 
-  <div class=”field”>
-   <%= form.label :workportfolio %>
-   <%= form.file_field :workportfolio %>
-  </div>
+                <div class="field form-group">
+                  <%= form.label "Обложка проекта"  %>
+                        <div class="field form-group">
+                          <div class="input-group">
+                            <div class="custom-file">
+                              <!-- <label class="custom-file-label" for="inputGroupFile01">Выберите файл</label> -->
+                              <%= form.file_field :workportfolio, :type => 'file', :class => 'custom-file-input', :id => 'inputGroupFile01', 'aria-label' => 'inputGroupFileAddon01', :style => 'cursor: pointer;' %>
 
-  <div class=”field”>
-   <%= form.label :link %>
-   <%= form.text_field :link %>
-  </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+
+                  <div class="d-flex justify-content-between mt-4 mb-5">
+
+                      <div class="actions">
+                        <%= form.submit 'Сохранить проект', :class => 'btn btn-dark btn-lg' %>
+                        <%= link_to 'Все проекты', projects_path, :class => 'btn btn-light btn-lg' %>
+                      </div>
+
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+  <% end %>
