@@ -18,7 +18,9 @@
 <p>
   <strong>Cover:</strong>
   <div>
-    <%= image_tag(@projectsite.worksite_url(:thumb).to_s) %>
+    <%= image_tag(@projectsite.worksite_url.to_s) %>
+
+    <%# <%= image_tag(@projectsite.worksite_url(:thumb).to_s) %> %>
    <%# <%= image_tag(@project.worksite.to_s) %>
   </div>
 </p>
