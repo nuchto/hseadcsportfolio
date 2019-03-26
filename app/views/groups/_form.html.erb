@@ -1,4 +1,4 @@
-<%= form_with(model: group, local: true) do |form| %>
+<%= form_with(model: group, local: true, :class => 'col-4 m-auto') do |form| %>
   <% if group.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
@@ -11,6 +11,88 @@
     </div>
   <% end %>
 
+
+<!-- <div class="container">
+  <h1>Новая группа</h1>
+</div> -->
+
+  <!-- <div class="field form-group">
+    <%= form.label "Ваш email *" %>
+    <%= form.text_field :name, :class => 'form-control' %>
+    <small id="emailHelp" class="form-text text-muted">Будьте внимательны. Редактировать или закрыть вакансию можно только по ссылке, высланной на этот адрес.</small>
+  </div> -->
+
+    <div class="container">
+      <div class="row">
+            <div class="well span4 offset4">
+              <div class="container">
+                <h1>Новая группа</h1>
+              </div>
+              <div class="card">
+                  <form>
+              <div class="form-group">
+                <%= form.label "Название *" %>
+                <%= form.text_field :name, :class => 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= form.label "Начало обучения" %>
+                <div>
+                  <select id="year_start" name="year_start" class="custom-select">
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="year_end">Конец обучения</label>
+                <div>
+                  <select id="year_end" name="year_end" class="custom-select">
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="level_quantity">Курс</label>
+                <div>
+                  <select id="level_quantity" name="level_quantity" class="custom-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="groupcover">Обложка группы</label>
+                  <input id="groupcover" name="groupcover" type="file" class="form-control-file">
+                </div>
+
+                <div class="d-flex justify-content-between mt-4 mb-5">
+
+                    <div class="actions">
+                      <%= form.submit 'Создать группу', :class => 'btn btn-secondary' %>
+                    </div>
+                    <%= link_to 'Назад', groups_path, :class => 'btn btn-outline-primary' %>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  <!-- <div class="form-group">
+    <button name="actions" type="actions" class="btn btn-primary">Создать группу</button>
+  </div> -->
+
+<div class="container">
  <div class="field">
     <%= form.label "Начало обучения" %>
     <%= form.select :year_start, options_for_select([["2016"], ["2017"], ["2018"], ["2019"]]) %>
@@ -37,6 +119,12 @@
 
   </div>
 
+    <div class="form-group">
+      <label for="exampleFormControlFile1">Example file input</label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+
+
   <div class="field">
    <%= form.label "Обложка группы" %>
    <%= form.file_field :groupcover %>
@@ -45,5 +133,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
-
+</div>
 <% end %>

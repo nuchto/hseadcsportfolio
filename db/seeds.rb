@@ -53,3 +53,14 @@ Person.create([
     last_name: 'Иванов'
   }
   ])
+
+  def create_user(user)
+  password = 'testtest'
+
+  User.create(
+    email:    user[:email],
+    role:     user[:role],
+    password: password,
+    password_confirmation: password
+  )
+end

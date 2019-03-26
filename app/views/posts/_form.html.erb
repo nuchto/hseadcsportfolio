@@ -11,17 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+  <div class="form-control">
+      <div class="">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
+      <div class="">
+        <%= form.label :body %>
+        <%= form.text_area :body %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+      <div class="">
+        <%= form.submit 'Сохранить'%>
+      </div>
+</div>
+
 <% end %>

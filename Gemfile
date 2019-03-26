@@ -41,14 +41,18 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'webpacker', '~> 3.5'
 
+gem 'devise'
+
 gem 'carrierwave', '~> 1.0'
+
+gem 'responsive_images'
 
 gem 'bootstrap-sass', '~> 3.4.0'
 gem 'sassc-rails', '>= 2.0.0'
+gem 'bootstrap', '~> 4.3.1'
 
 gem 'popper_js', '~> 1.14.5'
 
-gem 'bootstrap'
 
 gem 'jquery-rails'
 
