@@ -53,8 +53,6 @@ gem 'bootstrap-sass', '~> 3.4.0'
 gem 'sassc-rails', '>= 2.0.0'
 gem 'bootstrap', '~> 4.3.1'
 
-gem "aws-sdk-s3", require: false
-
 gem 'popper_js', '~> 1.14.5'
 
 gem 'jquery-rails'
