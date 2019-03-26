@@ -1,6 +1,29 @@
+<h1>Группы</h1>
+
+<div class="actions">
+  <% if user_signed_in? %>
+    <%= link_to 'Создать группу', new_group_path, class: 'btn btn-dark btn-lg'  %>
+  <% end %>
+</div>
+
+<div class="album text-muted">
+   <div class="container">
+      <div class="row">
+         <% @groups.each do |group| %>
+         <div class="card">
+
+            <strong class="card-text"><%= group.name %></strong>
+            <p class="card-text"><%= group.year_start %></p>
+            <p class="card-text"><%= group.year_end %></p>
+         </div>
+         <% end %>
+      </div>
+
+   </div>
+</div>
 
 
-<p id="notice"><%= notice %></p>
+
 
 <h1>Groups</h1>
 
