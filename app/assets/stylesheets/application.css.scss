@@ -17,6 +17,25 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "form";
+@import "posts";
+
+
+body{
+margin: 4vw;
+// margin-right: 4vw;
+}
+
+.d-none {
+  display: none;
+}
+.navbar-left {
+  margin-left: 3vw;
+}
+
+.navbar-right {
+  margin-right: 3vw;
+  font-weight: bold;
+}
 
 
 .navbar-dark {
@@ -27,6 +46,15 @@
 .navbar-brand {
   font-weight: bold;
   color: white;
-
-
+  position: absolute;
+  width: 100%;
+  right: 0;
+  text-align: center;
+  margin:0 auto;
+  z-index: -1;
 }
+
+
+// .btn.btn-secondary {
+//   color: gray;
+// }

@@ -11,85 +11,61 @@
     </div>
   <% end %>
 
-
-<!-- <div class="container">
-  <h1>Новая группа</h1>
-</div> -->
-
-  <!-- <div class="field form-group">
-    <%= form.label "Ваш email *" %>
-    <%= form.text_field :name, :class => 'form-control' %>
-    <small id="emailHelp" class="form-text text-muted">Будьте внимательны. Редактировать или закрыть вакансию можно только по ссылке, высланной на этот адрес.</small>
-  </div> -->
-
     <div class="container">
       <div class="row">
             <div class="well span4 offset4">
-              <div class="container">
+              <div class="">
                 <h1>Новая группа</h1>
               </div>
               <div class="card">
-                  <form>
-              <div class="form-group">
-                <%= form.label "Название *" %>
+              <form>
+              <div class="field form-group">
+                <%= form.label "Название группы" %>
                 <%= form.text_field :name, :class => 'form-control' %>
               </div>
-              <div class="form-group">
+              <div class="field form-group">
                 <%= form.label "Начало обучения" %>
-                <div>
-                  <select id="year_start" name="year_start" class="custom-select">
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="year_end">Конец обучения</label>
-                <div>
-                  <select id="year_end" name="year_end" class="custom-select">
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="level_quantity">Курс</label>
-                <div>
-                  <select id="level_quantity" name="level_quantity" class="custom-select">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                </div>
+                <%= form.select :year_start, options_for_select([["2016"], ["2017"], ["2018"], ["2019"], ["2020"]]), {}, {:class => 'form-control custom-select'} %>
                 </div>
 
-                <div class="form-group">
-                  <label for="groupcover">Обложка группы</label>
-                  <input id="groupcover" name="groupcover" type="file" class="form-control-file">
+              <div class="field form-group">
+                <%= form.label "Конец обучения" %>
+                <%= form.select :year_end, options_for_select([["2020"], ["2021"], ["2022"], ["2023"], ["2024"]]), {}, {:class => 'form-control custom-select'} %>
+              </div>
+              <div class="form-group">
+                <%= form.label "Курс" %>
+                <%= form.select :level_quantity, options_for_select([["1"], ["2"], ["3"], ["4"]]), {}, {:class => 'form-control custom-select'} %>
                 </div>
+
+
+              <div class="field form-group">
+                <%= form.label "Обложка группы"  %>
+                      <div class="field form-group">
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <!-- <label class="custom-file-label" for="inputGroupFile01">Выберите файл</label> -->
+                            <%= form.file_field :groupcover, :type => 'file', :class => 'custom-file-input', :id => 'inputGroupFile01', 'aria-label' => 'inputGroupFileAddon01', :style => 'cursor: pointer;' %>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
 
                 <div class="d-flex justify-content-between mt-4 mb-5">
 
                     <div class="actions">
-                      <%= form.submit 'Создать группу', :class => 'btn btn-secondary' %>
+                      <%= form.submit 'Создать группу', :class => 'btn btn-dark btn-lg' %>
+                      <%= link_to 'Все группы', groups_path, :class => 'btn btn-light btn-lg' %>
                     </div>
-                    <%= link_to 'Назад', groups_path, :class => 'btn btn-outline-primary' %>
+
                 </div>
                 </form>
               </div>
             </div>
           </div>
         </div>
-  <!-- <div class="form-group">
-    <button name="actions" type="actions" class="btn btn-primary">Создать группу</button>
-  </div> -->
+
 
 <% end %>

@@ -6,4 +6,8 @@
  <%= render @posts %>
 </section>
 
-<%= link_to 'Новая статья', new_post_path %>
+<div class="actions">
+  <% if user_signed_in? %>
+    <%= link_to 'Новая статья', new_post_path, class: 'btn btn-primary'  %>
+  <% end %>
+</div>

@@ -39,9 +39,7 @@ Group.create([
     level_quantity: '1',
     group_id: '4'
   }
-  ])
-
-
+end
 
 Person.create([
   {
@@ -55,6 +53,7 @@ Person.create([
   ])
 
   def create_user(user)
+  email = 'test@test'
   password = 'testtest'
 
   User.create(
