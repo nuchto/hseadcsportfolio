@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @projectbehance.level %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @projectbehance.group_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @projectbehance.name %>
+</p>
+
+<p>
+  <strong>Cover:</strong>
+  <div>
+    <%= image_tag(@projectbehance.workbehance_url.to_s) %>
+
+   <%# <%= image_tag(@projectbehance.workbehance_url(:thumb).to_s) %> %>
+  </div>
+</p>
+
+<%= link_to 'Edit', edit_projectbehance_path(@projectbehance) %> |
+<%= link_to 'Back', projectbehances_path %>

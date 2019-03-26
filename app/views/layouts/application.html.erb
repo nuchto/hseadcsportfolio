@@ -12,7 +12,7 @@
 
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse" style="background-color: black;">
-          <div class="container">
+          <div class="menubar">
             <nav>
               <ul class="nav navbar-nav navbar-left">
                 <li class="nav-item <%= 'active' if current_page?(projects_path) || current_page?(projects_path) %>">
@@ -21,17 +21,16 @@
                 <li class="nav-item <%= 'active' if current_page?(groups_path) || current_page?(groups_path) %>">
                   <a class="nav-link" href="<%= groups_path %>">Группы</a>
                 </li>
+
                 <li class="nav-item <%= 'active' if current_page?(posts_path) || current_page?(posts_path) %>">
                   <a class="nav-link" href="<%= posts_path %>">Статьи</a>
                 </li>
               </ul>
-
-
               </nav>
         <nav>
           <ul class="nav navbar-nav navbar-center"
             <li class="nav-item">
-              <%= link_to "HSEADCSPORTFOLIO", projects_path, class: "navbar-brand" %>
+              <%= link_to "HSE ART AND DES IGN AND COD ING SCH OOL", projects_path, class: "navbar-brand" %>
             </li>
         </ul>
       </nav>
@@ -52,12 +51,11 @@
         <% end %>
       </ul>
       </nav>
-          </div>
-        </header>
+    </div>
+  </header>
 
-        <div class="container">
+        <div class="">
           <%= render 'menubar'  %>
-
           <%= yield %>
         </div>
 

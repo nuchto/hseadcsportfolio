@@ -1,58 +1,42 @@
 <%= form_with(model: project, local: true) do |form| %>
-  <% if project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-      <% project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <div class="container">
+      <div class="row">
+            <div class="well span4 offset4">
 
-  <div class="field">
-    <%= form.label :level %>
+              <div class="card">
+              <form>
 
-    <%= form.select(:level) do %>
-      <% [['1', 1], ['2', 2], ['3', 3], ['4', 4] ].each do |c| -%>
-        <%= content_tag(:option, c.first, value: c.last) %>
-      <% end %>
-    <% end %>
-  </div>
+                <div class="">
+                  <h1>Добавить проект</h1>
+                </div>
 
-  <div class="field">
-    <%= form.label :group_id %>
-    <%= select("project", "group_id", Group.all.collect { |p| [ p.name, p.id] }, { include_blank: true }) %>
-    <!-- <%= form.select(:group_id) do %>
-      <% [['Новая кровь', 1], ['Третий отряд', 2], ['Ночь нежна', 3], ['Поток 2020', 4] ].each do |c| -%>
-        <%= content_tag(:option, c.first, value: c.last) %>
-      <% end %>
-    <% end %> -->
+              <div class="field form-group">
+                <%= form.label "Студенческий проект" %>
+                <%= link_to "+", new_projectportfolio_path, class: "nav-link" %>
+              </div>
 
-  </div>
+              <div class="field form-group">
+                <%= form.label "Behance" %>
+                <%= link_to "+", new_projectbehance_path, class: "nav-link" %>
+              </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+              <div class="field form-group">
+                <%= form.label "Персональный сайт" %>
+                <%= link_to "+", new_projectsite_path, class: "nav-link" %>
+              </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
+                <div class="d-flex justify-content-between mt-4 mb-5">
 
-  <div class=”field”>
-	  <%= form.label :work %>
-	  <%= form.file_field :work, :multipart => true  %>
-  </div>
+                    <div class="actions">
+                      <%= link_to 'Все проекты', projects_path, :class => 'btn btn-light btn-lg' %>
+                    </div>
 
-  <div class=”field”>
- 	  <%= form.label :workcover %>
- 	  <%= form.file_field :workcover %>
-   </div>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

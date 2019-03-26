@@ -1,8 +1,12 @@
+
+
+
 h1 {
   font-size: 4rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  font-weight: bold;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+
 }
 
 .h1-index {
@@ -10,24 +14,50 @@ h1 {
   margin-bottom: 0;
 }
 
-textarea.form-control {
-  height: 135px;
-  width: 40px;
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 2rem;
 }
 
-.navbar-nav .form-inline {
-  margin-left: 0;
+textarea.form-control {
+  height: 135px;
+  // width: 40px;
 }
+
 
 .input-group {
   padding-left: 0;
 }
-.well {
-  margin-top: 6rem;
 
+.well {
+  margin-top: 6vw;
+  padding: 4vw;
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.25);
 }
+
+.row {
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+
+.btn {
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+}
+.btn.btn-dark {
+  background-color: black;
+  color: white;
+}
+
+.btn.btn-light {
+ background-color: lightgray;
+ color: white;
+
+}
+
 
 // .btn-secondary {
 //   background: black;

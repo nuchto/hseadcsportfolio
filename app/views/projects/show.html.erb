@@ -15,15 +15,10 @@
   <%= @project.name %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<div>
+ <div>
   <p>
     <strong>Cover:</strong>
-    <%= @project.cover %>
+    <%= @project.workcover %>
   </p>
   <%= image_tag(@project.workcover_url(:thumb).to_s) %>
 </div>

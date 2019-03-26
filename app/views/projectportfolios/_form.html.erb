@@ -1,0 +1,67 @@
+<%= form_with(model: projectportfolio, local: true) do |form| %>
+  <% if projectportfolio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(projectportfolio.errors.count, "error") %> prohibited this projectportfolio from being saved:</h2>
+
+      <ul>
+      <% projectportfolio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+      <div class="container">
+        <div class="row">
+              <div class="well span4 offset4">
+                <div class="">
+                  <h1>Добавить проект из студенческого портфолио</h1>
+                </div>
+                <div class="card">
+                <form>
+                <div class="field form-group">
+                  <%= form.label "Название проекта" %>
+                  <%= form.text_field :name, :class => 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                  <%= form.label "Курс" %>
+                  <%= form.select :level_quantity, options_for_select([["1"], ["2"], ["3"], ["4"]]), {}, {:class => 'form-control custom-select'} %>
+                  </div>
+
+                  <div class="form-group">
+                    <%= form.label "Группа" %>
+                    <%= select("project", "group_id", Group.all.collect { |p| [ p.name, p.id] }, { include_blank: true }) %>
+                  </div>
+
+                <div class="field form-group">
+                  <%= form.label "Обложка проекта"  %>
+                        <div class="field form-group">
+                          <div class="input-group">
+                            <div class="custom-file">
+                              <!-- <label class="custom-file-label" for="inputGroupFile01">Выберите файл</label> -->
+                              <%= form.file_field :workportfolio, :type => 'file', :class => 'custom-file-input', :id => 'inputGroupFile01', 'aria-label' => 'inputGroupFileAddon01', :style => 'cursor: pointer;' %>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                  <div class="d-flex justify-content-between mt-4 mb-5">
+
+                      <div class="actions">
+                        <%= form.submit 'Сохранить проект', :class => 'btn btn-dark btn-lg' %>
+                        <%= link_to 'Все проекты', projects_path, :class => 'btn btn-light btn-lg' %>
+                      </div>
+
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+  <% end %>

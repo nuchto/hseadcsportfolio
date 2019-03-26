@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @projectportfolio.level %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @projectportfolio.group_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @projectportfolio.name %>
+</p>
+
+<p>
+  <strong>Cover:</strong>
+  <div>
+    <%= image_tag(@projectportfolio.workportfolio_url.to_s) %>
+
+   <%# <%= image_tag(@projectportfolio.workportfolio_url.to_s) %> %>
+  </div>
+</p>
+
+<%= link_to 'Edit', edit_projectportfolio_path(@projectportfolio) %> |
+<%= link_to 'Back', projectportfolios_path %>

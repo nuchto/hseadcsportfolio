@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Проекты из студенческого портфолио Школы Дизайна НИУ ВШЭ</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Group</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projectportfolios.each do |projectportfolio| %>
+      <tr>
+        <td><%= projectportfolio.level %></td>
+        <td><%= projectportfolio.group_id %></td>
+        <td><%= projectportfolio.name %></td>
+        <td><%= image_tag(projectportfolio.workportfolio_url.to_s) %></td>
+        <td><%= link_to 'Show', projectportfolio %></td>
+        <td><%= link_to 'Edit', edit_projectportfolio_path(projectportfolio) %></td>
+        <td><%= link_to 'Destroy', projectportfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Projectportfolio', new_projectportfolio_path %>

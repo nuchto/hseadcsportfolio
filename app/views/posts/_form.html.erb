@@ -1,30 +1,21 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<%= form_for @post do |form| %>
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-control' %>
+  </div>
 
-  <div class="form-control">
-      <div class="">
-        <%= form.label :title %>
-        <%= form.text_field :title %>
-      </div>
+  <div class="form-group">
+    <%= form.label :body %>
+    <%= form.text_area :body, class: 'form-control' %>
+  </div>
 
-      <div class="">
-        <%= form.label :body %>
-        <%= form.text_area :body %>
-      </div>
-
-      <div class="">
-        <%= form.submit 'Сохранить'%>
-      </div>
-</div>
-
+  <div class="form-group">
+    <%= form.submit 'Сохранить статью', class: 'btn btn-dark btn-lg' %>
+    <%= link_to 'Все статьи', :back, class: 'btn btn-light btn-lg' %>
+  </div>
 <% end %>

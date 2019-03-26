@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Статьи</h1>
 
@@ -6,9 +5,8 @@
  <%= render @posts %>
 </section>
 
-
-
-
-
-
-<%= link_to 'Новая статья', new_post_path %>
+<div class="actions">
+  <% if user_signed_in? %>
+    <%= link_to 'Создать статью', new_post_path, class: 'btn btn-dark btn-lg'  %>
+  <% end %>
+</div>

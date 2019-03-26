@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Личные проекты</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Group</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projectsites.each do |projectsite| %>
+      <tr>
+        <td><%= projectsite.level %></td>
+        <td><%= projectsite.group_id %></td>
+        <td><%= projectsite.name %></td>
+        <td><%= image_tag(projectsite.worksite_url.to_s) %></td>
+        <td><%= link_to 'Show', projectsite %></td>
+        <td><%= link_to 'Edit', edit_projectsite_path(projectsite) %></td>
+        <td><%= link_to 'Destroy', projectsite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Projectsite', new_projectsite_path %>

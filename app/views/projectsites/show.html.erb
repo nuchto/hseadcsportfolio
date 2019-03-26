@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @projectsite.level %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @projectsite.group_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @projectsite.name %>
+</p>
+
+<p>
+  <strong>Cover:</strong>
+  <div>
+    <%= image_tag(@projectsite.worksite_url.to_s) %>
+
+    <%# <%= image_tag(@projectsite.worksite_url(:thumb).to_s) %> %>
+   <%# <%= image_tag(@project.worksite.to_s) %>
+  </div>
+</p>
+
+<%= link_to 'Edit', edit_projectsite_path(@projectsite) %> |
+<%= link_to 'Back', projectsites_path %>

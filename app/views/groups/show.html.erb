@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 
 <p>
   <strong>Name:</strong>
@@ -21,19 +19,12 @@
   <%= @group.level_quantity %>
 </p>
 
-<!-- <p>
-  <strong>Kind:</strong>
-  <%= @group.kind %>
-</p> -->
-
 <div>
   <p>
     <strong>Cover:</strong>
   </p>
-
   <%= image_tag(@group.groupcover_url(:thumb).to_s) %>
 </div>
-
 
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
